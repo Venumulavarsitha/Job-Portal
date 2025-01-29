@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Job Portal</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="post-job.html">Post Job</a></li>
+                <li><a href="logout.html" class="logout-button">Logout</a></li>
+            </ul>
+        </nav>
+        <section class="hero">
+            <h2>Welcome to the Job Portal</h2>
+            <p>Find your dream job today!</p>
+            <input type="text" id="search" placeholder="Search for jobs..." onkeyup="searchJobs()">
+        </section>
+    </header>
+
+    <main>
+        <section class="job-listings">
+            <div class="job">
+                <h3>Frontend Developer</h3>
+                <p><strong>Company:</strong> Tech Solutions</p>
+                <p><strong>Location:</strong> Remote</p>
+                <button onclick="applyJob('Frontend Developer')">Apply Now</button>
+            </div>
+            <div class="job">
+                <h3>Backend Developer</h3>
+                <p><strong>Company:</strong> WebWorks</p>
+                <p><strong>Location:</strong> New York</p>
+                <button onclick="applyJob('Backend Developer')">Apply Now</button>
+            </div>
+            <div class="job">
+                <h3>UI/UX Designer</h3>
+                <p><strong>Company:</strong> Creative Minds</p>
+                <p><strong>Location:</strong> San Francisco</p>
+                <button onclick="applyJob('UI/UX Designer')">Apply Now</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="application-form" class="hidden">
+        <h2>Apply for Job</h2>
+        <p id="job-title"></p>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <button onclick="submitApplication()">Submit</button>
+        <button onclick="closeForm()">Cancel</button>
+    </div>
+
+    <footer>
+        <p>© 2025 Job Portal | All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

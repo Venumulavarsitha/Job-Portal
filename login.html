@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Job Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Login to Job Portal</h1>
+    </header>
+    <main>
+        <div class="login-container">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Enter Username">
+            <input type="password" id="password" placeholder="Enter Password">
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <a href="register.html">Register</a></p>
+        </div>
+    </main>
+    <script>
+        if (localStorage.getItem("isLoggedIn") === "true") {
+            window.location.href = "index.html";
+        }
+    
+        function login() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+    
+            let storedUsername = localStorage.getItem("username");
+            let storedPassword = localStorage.getItem("password");
+    
+            if (username === storedUsername && password === storedPassword) {
+                localStorage.setItem("isLoggedIn", "true");
+                alert("Login Successful!");
+                window.location.href = "index.html"; // Redirect to job portal
+            } else {
+                alert("Invalid Username or Password!");
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
